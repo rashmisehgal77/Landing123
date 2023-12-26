@@ -26,19 +26,23 @@
         <div class="overlap-group">
             <img class="image" src="Assets/Images/image 31.png" />
             <div class="whatsapp-button">
-              <div class="frame"><img class="img" src="Assets/Images/ic_baseline-whatsapp.png" /></div>
+                <div class="frame">
+                    <img class="img" src="Assets/Images/ic_baseline-whatsapp.png" />
+                </div>
             </div>
             <div class="email-button">
-  
-              <div class="eva-email-outline-wrapper"><img class="img" src="Assets/Images/eva_email-outline.png"></div>
+                <div class="eva-email-outline-wrapper">
+                    <img class="img" src="Assets/Images/eva_email-outline.png">
+                </div>
             </div>
+
             <img class="gridicons-play" src="Assets/Images/gridicons_play.png" />
           </div>
       </div>
     </div>
     <section class="macbook-pro">
         <div class="container">
-            <div class="outer-box" >
+            <div class="outer-box break1" >
                 <div class="box-right">
                     <img class="img img-reverse" src="Assets/Images/image 27.png" />
                 </div>
@@ -61,7 +65,7 @@
                
                 
             </div>
-            <div class="outer-box">
+            <div class="outer-box break1">
                 <div class="box-left">
                     <h2 >Elixir Smp For Women</h2>
                     <p class="inner-text">
@@ -86,7 +90,7 @@
                 </div>
                 
             </div>
-            <div class="outer-box">
+            <div class="outer-box break1">
                 <div class="box-right">
                     <img class="img img-reverse" src="Assets/Images/image 9.png" />
                 </div>
@@ -112,7 +116,7 @@
                
                 
             </div>
-            <div class="outer-box">
+            <div class="outer-box break1">
                 <div class="box-left">
                     <h2 >Elixir Smp For scarring</h2>
                     <p class="inner-text">
@@ -292,9 +296,52 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div>    
     
-
-    
+   
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          var outerBoxes = document.querySelectorAll('.outer-box');
+      
+          var options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
+          };
+      
+          var observer = new IntersectionObserver(handleVisibility, options);
+      
+          function handleVisibility(entries, observer) {
+            entries.forEach(function (entry, index) {
+              if (entry.isIntersecting) {
+                setTimeout(function () {
+                  entry.target.classList.add('visible');
+                }, index * 200); // Adjust the delay as needed
+                observer.unobserve(entry.target);
+              }
+            });
+          }
+      
+          outerBoxes.forEach(function (box) {
+            observer.observe(box); // Start observing each .outer-box element
+          });
+      
+          // Function to handle scroll events
+          function handleScroll() {
+            var scrollTop = window.scrollY || document.documentElement.scrollTop;
+            outerBoxes.forEach(function (box, index) {
+              if (box.offsetTop <= window.innerHeight + scrollTop) {
+                setTimeout(function () {
+                  box.classList.add('visible');
+                }, index * 200); // Adjust the delay as needed
+              }
+            });
+          }
+      
+          // Attach the handleScroll function to the scroll event
+          window.addEventListener('scroll', handleScroll);
+        });
+      </script>
+      
   </body>
 </html>

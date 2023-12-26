@@ -79,6 +79,7 @@
     height: 100px;
     top: 376px;
     left: 376px;
+    cursor: pointer;
   }
   
   .macbook-pro1 .text-wrapper {
@@ -117,9 +118,15 @@
     font-size: 24px;
     letter-spacing: 0;
     line-height: normal;
+    cursor: pointer;
     text-decoration: underline;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
   }
-  
+  .macbook-pro1 .text-wrapper-2:hover{
+    /* background-color: #0056b3;  */
+    color: #fff; 
+    transform: scale(1.1);
+  }
   .macbook-pro1 .image-2 {
     width: 175px;
     height: 50px;
@@ -186,11 +193,15 @@
     padding: 10px 30px;
     background-color: var(--ylw);
     border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+  .booking:hover {
+    transform: scale(0.9); 
   }
   .booking p {
     width: fit-content;
     margin:0;
-    
     font-weight: 500;
     color: var(--blk);
     font-size: 24px;
@@ -530,3 +541,35 @@ padding-top: 30px;
         margin: 0 110px;
     }
 }
+.whatsapp-button,
+.email-button {
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.whatsapp-button:hover,
+.email-button:hover {
+  transform: scale(1.2); 
+}
+
+.break1 {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.break1.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.form-input {
+  transform: scale(0.8);
+  transition: transform 0.5s ease;
+}
+
+.form-input:focus {
+  transform: scale(1);
+}
+
+
